@@ -1,3 +1,5 @@
+//  pdf-convert listens on $PORT:/convert for pdfs to convert 
+//  docker run -d -e PORT=80 -p 8080:80 <docker image id>
 package main
 
 import (
@@ -53,5 +55,6 @@ func convertHandler(w http.ResponseWriter, req *http.Request) {
 func main() {
 	checkPath()
 	http.HandleFunc("/convert", convertHandler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	port := ":"+os.Getenv("PORT")
+	log.Fatal(http.ListenAndServe(port, nil))
 }

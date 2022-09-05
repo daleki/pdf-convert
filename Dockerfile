@@ -11,5 +11,4 @@ FROM alpine
 WORKDIR /
 RUN apk add poppler-utils --no-cache
 COPY --from=build /usr/bin/pdf-convert /usr/bin/pdf-convert
-EXPOSE 80
 CMD ["/usr/bin/pdf-convert"]

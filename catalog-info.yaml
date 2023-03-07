@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pdf-convert
+  annotations:
+    github.com/project-slug: daleki/pdf-convert
+spec:
+  type: other
+  lifecycle: unknown
+  owner: daleki
